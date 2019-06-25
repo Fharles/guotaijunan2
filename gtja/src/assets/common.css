@@ -1,0 +1,535 @@
+@charset "utf-8";
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  -webkit-text-size-adjust: 100%;
+  font-size: 13.333333vw;
+  font-family: -apple-system, "PingFang SC", "microsoft yahei", Helvetica, STHeiTi, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: #fff;
+}
+body {
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+input,
+select,
+textarea {
+  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+ol,
+ul {
+  list-style: none;
+}
+*:not(input, select, textArea) {
+  -webkit-user-select: none;
+}
+img,
+a {
+  -webkit-touch-callout: none;
+}
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.grayBg {
+  background: #F5F5F5;
+}
+header {
+  position: fixed;
+  width: 100%;
+  height: 2.2rem;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  background: #F5F5F5;
+}
+header .head-title {
+  width: 100%;
+  height: 1.28rem;
+  background: #3083EB;
+  font: 0.34rem/1.28rem "microsoft yahei";
+  color: #fff;
+  text-align: center;
+}
+header .nav {
+  background: #fff;
+  margin: .2rem auto;
+  width: 100%;
+  height: .72rem;
+}
+header .nav ul {
+  font-size: 0;
+  height: .72rem;
+}
+header .nav ul li {
+  display: inline-block;
+  vertical-align: top;
+  height: .72rem;
+  text-align: center;
+  cursor: pointer;
+  width: 16.666666%;
+  font: 0.24rem/0.7rem "microsoft yahei";
+  color: #ccc;
+  border-bottom: .02rem solid transparent;
+}
+header .nav ul li.active {
+  color: #222;
+  border-bottom: .02rem solid #3083EB;
+}
+header .search_box {
+  background: #3083EB;
+  height: .88rem;
+  overflow: hidden;
+  position: relative;
+}
+header .search_box .back{
+  display: none;
+}
+header .search_box input {
+  display: block;
+  width: 7.16rem;
+  height: .6rem;
+  margin: .14rem auto;
+  color: #f0f0f0;
+  border: none;
+  outline: none;
+  text-align: center;
+  background: #2069e3;
+  border-radius: .1rem;
+}
+header .search_box input:focus{
+  text-align: left;
+  text-indent: .2rem;
+}
+header .search_box input::-webkit-input-placeholder {
+  color: #ccc;
+}
+header .search_box.hasBack {
+  font-size: 0;
+}
+header .search_box.hasBack .back {
+  display: inline-block;
+  vertical-align: top;
+  margin: .28rem .2rem 0 .2rem;
+  background: url(img/icon_back.png) no-repeat center;
+  background-size: 100% 100%;
+  width: .2rem;
+  height: .32rem;
+}
+header .search_box.hasBack input {
+  display: inline-block;
+  vertical-align: top;
+  width: 6.76rem;
+  margin-left: 0;
+}
+header .search_box img {
+  position: absolute;
+  display: block;
+  width: .32rem;
+  height: .32rem;
+  top: .3rem;
+  left: 2.2rem;
+}
+header .search_box .cancel_btn {
+  display: none;
+  position: absolute;
+  font: 0.24rem/0.4rem "microsoft yahei";
+  color: #f0f0f0;
+  cursor: pointer;
+  top: .25rem ;
+  right: .4rem;
+}
+header .search_box .cancel_btn.show{
+  display: block;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: .9rem;
+  z-index: 9999999;
+  background: #fff;
+}
+.footer ul {
+  font-size: 0;
+}
+.footer ul li {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  text-align: center;
+}
+.footer ul li img {
+  display: block;
+  margin: .1rem auto;
+  height: .3rem;
+}
+.footer ul li a {
+  display: block;
+  text-align: center;
+  font: 0.2rem/0.4rem "microsoft yahei";
+  color: #666;
+}
+.footer ul li.active a {
+  color: #3083EB;
+}
+.footer .add_btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #2069E3;
+  border: none;
+  outline: none;
+  font: 0.34rem/0.9rem "microsoft yahei";
+  color: #fff;
+}
+.content {
+  display: block;
+  width: 100%;
+  margin: 2.4rem auto 1.1rem;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.content .list {
+  width: 7.16rem;
+  margin: 0 auto;
+}
+.content .list .item {
+  width: 100%;
+  margin-bottom: .2rem;
+  font-size: 0;
+  background: #fff;
+  border-radius: .05rem;
+  padding: .1rem 0;
+}
+.content .list .item .item_names {
+  display: inline-block;
+  width: 2.4rem;
+  vertical-align: top;
+  border-right: 1px solid #ddd;
+}
+.content .list .item .item_names img {
+  display: block;
+  margin: 0 auto;
+  height: .48rem;
+}
+.content .list .item .item_names .item_name {
+  text-align: center;
+}
+.content .list .item .item_names .item_name span {
+  display: block;
+  vertical-align: top;
+  font: 0.24rem/0.4rem "microsoft yahei";
+  color: #222;
+  position: relative;
+}
+.content .list .item .item_names .item_name img {
+  position: absolute;
+  top: .05rem;
+  display: inline-block;
+  vertical-align: top;
+  height: .2rem;
+  margin-left: .02rem;
+}
+.content .list .item .item_names p {
+  font: 0.2rem/0.3rem "microsoft yahei";
+  color: #CCCCCC;
+  text-align: center;
+}
+.content .list .item .item_status {
+  display: inline-block;
+  vertical-align: top;
+  width: 4.6rem;
+  padding-left: .6rem;
+}
+.content .list .item .item_status h2 {
+  font: 0.48rem/0.5rem "microsoft yahei";
+  color: #222;
+}
+.content .list .item .item_status h2 span {
+  font-size: .36rem;
+}
+.content .list .item .item_status h3 {
+  font: 0.22rem/0.3rem "microsoft yahei";
+  color: #222;
+}
+.content .list .item .item_status p {
+  font: 0.2rem/0.3rem "microsoft yahei";
+  color: #CCCCCC;
+}
+.content .screen {
+  display: block;
+  width: 7.16rem;
+  margin: 0 auto .2rem;
+}
+.content .screen h3 {
+  display: block;
+  font: 0.28rem/0.4rem "microsoft yahei";
+  color: #000;
+  border-bottom: 1px solid #f2f2f2;
+}
+.content .screen h4 {
+  display: block;
+  font: 0.24rem/0.6rem "microsoft yahei";
+  color: #000;
+}
+.content .screen ul {
+  font-size: 0;
+  margin-top: .2rem;
+}
+.content .screen ul li {
+  display: inline-block;
+  vertical-align: top;
+  width: 2.2rem;
+  margin-right: .25rem;
+  margin-bottom: .2rem;
+  height: .52rem;
+  background: #f5f5f5;
+  border-radius: .05rem;
+  cursor: pointer;
+  text-align: center;
+  font: 0.24rem/0.52rem "microsoft yahei";
+  color: #595959;
+}
+.content .screen ul li:nth-child(3n) {
+  margin-right: 0;
+}
+.content .screen ul li.more {
+  background: transparent;
+  text-align: left;
+  background: url(img/icon_more.png) no-repeat left center;
+  background-size: .2rem .2rem ;
+}
+.content .screen ul li.active {
+  border: .02rem solid #2069E3;
+  background: #fff;
+  line-height: .48rem;
+  color: #2069E3;
+}
+.content .tabs {
+  font-size: 0;
+}
+.content .tabs li {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  height: .8rem;
+  position: relative;
+}
+.content .tabs li span {
+  display: block;
+  width: 1.2rem;
+  margin: 0 auto;
+  font: 0.28rem/0.78rem "microsoft yahei";
+  text-align: center;
+  color: #000;
+  border-bottom: .02rem solid transparent;
+}
+.content .tabs li.active span {
+  border-bottom: .02rem solid #2069E3;
+}
+.content .tabs li:first-child:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: .02rem;
+  height: .4rem;
+  background: #ccc;
+  top: .2rem;
+  right: 0;
+}
+.content .search_tab {
+  display: block;
+  width: 7.16rem;
+  margin: 0 auto;
+}
+.content .search_tab .second_search {
+  width: 100%;
+  font-size: 0;
+  position: relative;
+  margin: .2rem 0;
+}
+.content .search_tab .second_search span {
+  display: inline-block;
+  vertical-align: top;
+  font: 0.24rem/0.52rem "microsoft yahei";
+  color: #000;
+  margin-right: .28rem;
+}
+.content .search_tab .second_search input {
+  display: inline-block;
+  vertical-align: top;
+  height: .52rem;
+  border: .02rem solid #ccc;
+  outline: none;
+  text-indent: .2rem;
+  font-size: .24rem;
+  width: 5.5rem;
+}
+.content .search_tab .second_search input:focus {
+  border-color: #2069E3;
+}
+.content .search_tab .twoLi,
+.content .search_tab .threeLi {
+  font-size: 0;
+  margin-bottom: .2rem;
+}
+.content .search_tab .twoLi li,
+.content .search_tab .threeLi li {
+  display: inline-block;
+  vertical-align: top;
+  background: #F5F5F5;
+  border-radius: .05rem;
+  width: 3.29rem;
+  font: 0.24rem/0.52rem "microsoft yahei";
+  cursor: pointer;
+  color: #bbb;
+  text-align: center;
+  margin-right: .4rem;
+  margin-bottom: .2rem;
+}
+.content .search_tab .twoLi li:nth-child(2n),
+.content .search_tab .threeLi li:nth-child(2n) {
+  margin-right: 0;
+}
+.content .search_tab .twoLi li.active,
+.content .search_tab .threeLi li.active {
+  border: .02rem solid #2069E3;
+  background: #fff;
+  color: #2069E3;
+  line-height: .48rem;
+}
+.content .search_tab .threeLi li {
+  width: 2.14rem;
+  margin-right: .28rem;
+}
+.content .search_tab .threeLi li:nth-child(2n) {
+  margin-right: .28rem;
+}
+.content .search_tab .threeLi li:nth-child(3n) {
+  margin-right: 0;
+}
+.content .search_tab .search_content {
+  display: block;
+  width: 100%;
+}
+.content .search_tab .search_content ul li {
+  border-bottom: .02rem solid #ccc;
+  font-size: 0;
+  margin-top: .2rem;
+  padding-bottom: .2rem;
+}
+.content .search_tab .search_content ul li span {
+  display: inline-block;
+  vertical-align: top;
+  font: 0.28rem/0.4rem "microsoft yahei";
+}
+.content .search_tab .search_content ul li span.add {
+  float: right;
+  margin: .02rem .36rem 0 0;
+  background: url(img/icon_add.png) no-repeat center;
+  background-size: 100% 100%;
+  width: .36rem;
+  height: .36rem;
+}
+.content .search_tab .search_content ul li span.added {
+  background: url(img/icon_added.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.content .search_tab .sales_tabs {
+  font-size: 0;
+  margin: .2rem auto;
+  border-bottom: .02rem solid #2069E3;
+  height: .8rem;
+}
+.content .search_tab .sales_tabs span {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  font: 0.24rem/0.8rem "microsoft yahei";
+  color: #DBDBDB;
+  text-align: center;
+  cursor: pointer;
+}
+.content .search_tab .sales_tabs span.active {
+  color: #2069E3;
+  position: relative;
+}
+.content .search_tab .sales_tabs span.active:before {
+  content: '';
+  position: absolute;
+  border-bottom: .12rem solid #2069E3;
+  border-left: .12rem solid transparent;
+  border-right: .12rem solid transparent;
+  bottom: 0;
+  left: 50%;
+  margin-left: -0.12rem;
+}
+.content .search_tab .sales_tabs span.active:after {
+  content: '';
+  position: absolute;
+  border-bottom: .1rem solid #fff;
+  border-left: .1rem solid transparent;
+  border-right: .1rem solid transparent;
+  bottom: 0;
+  left: 50%;
+  margin-left: -0.1rem;
+}
